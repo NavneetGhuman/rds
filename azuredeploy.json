@@ -75,6 +75,12 @@
         "description": "The size of the RDSH VMs"
       },
       "defaultValue": "Standard_A4"
+    },
+     "_artifactsLocation": {
+      "type": "string"
+    },
+    "_artifactsLocationSasToken": {
+      "type": "securestring"
     }
   },
   "variables": {
@@ -394,6 +400,7 @@
         "mode": "Incremental",
         "templateLink": {
           "uri": "[variables('adTemplateURL')]",
+          "uri": "[concat(parameters('_artifactsLocation'), '/nested/azuredeploy.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -441,6 +448,7 @@
         "mode": "Incremental",
         "templateLink": {
           "uri": "[variables('deployPrimaryAdTemplateURL')]",
+          "uri": "[concat(parameters('_artifactsLocation'), '/nested/azuredeploy.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
@@ -473,6 +481,7 @@
         "mode": "Incremental",
         "templateLink": {
           "uri": "[variables('vnetwithDNSTemplateURL')]",
+          "uri": "[concat(parameters('_artifactsLocation'), '/nested/azuredeploy.json')]",
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
