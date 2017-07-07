@@ -76,12 +76,6 @@
       },
       "defaultValue": "Standard_A4"
     },
-    "_artifactsLocation": {
-      "type": "string"
-    },
-    "_artifactsLocationSasToken": {
-      "type": "securestring"
-    },
     "vaultName": {
       "type": "string",
       "metadata": {
@@ -120,6 +114,7 @@
     }
     },
     "variables": {
+      "_artifactsLocation": "https://raw.githubusercontent.com/NavneetGhuman/rds/master/",
       "adAssetLocation": "https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ad-non-ha",
       "adVMSize": "Standard_A1",
       "adVnetName": "[concat('ADVNET',resourceGroup().name)]",
@@ -898,13 +893,12 @@
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2016-02-01",
         "dependsOn": [
-        "[resourceId('Microsoft.Compute/virtualMachines', 'cb-vm')]",
-          "[resourseId('Microsoft.Compute/virtualMachines/extensions','cb-vm/rdsdeployment')]
+        "Microsoft.Compute/virtualMachines/gw-vm/extensions/gateway",
         ],
         "properties": {
           "mode": "Incremental",
           "templateLink": {
-            "uri": "[concat(parameters('_artifactsLocation'), '/nested/azuredeploy.json')]",
+            "uri": "[concat(variables('_artifactsLocation'), '/nested/azuredeploy.json')]",
             "contentVersion": "1.0.0.0"
           },
           "parameters": {
@@ -934,13 +928,6 @@
             },
             "existingAdminPassword": {
               "value": "[parameters('adminPassword')]"
-            },
-            "_artifactsLocation": {
-              "value": "[parameters('_artifactsLocation')]"
-            },
-            "_artifactsLocationSasToken": 
-            {
-              "value": "[parameters('_artifactsLocationSasToken')]"
             }
           }
         }
