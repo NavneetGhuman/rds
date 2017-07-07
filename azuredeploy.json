@@ -116,8 +116,9 @@
             "type": "string",
             "metadata": {
                 "description": "Name of the RD Connection Broker VM resource in the deployment (the configure certificates script is executed on this VM)."
-            },
-  },
+            }
+        }
+  }
   "variables": {
     "adAssetLocation": "https://raw.githubusercontent.com/Azure/AzureStack-QuickStart-Templates/master/ad-non-ha",
     "adVMSize": "Standard_A1",
