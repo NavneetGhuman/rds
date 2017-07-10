@@ -905,8 +905,9 @@
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2016-02-01",
         "dependsOn": [
-        "Microsoft.Compute/virtualMachines/cb-vm/extensions/rdsdeployment",
-         "[concat('Microsoft.Network/loadBalancers/', variables('gwlbName'))]",
+         "Microsoft.Compute/virtualMachines/cb-vm/extensions/rdsdeployment",
+         "[resourceId('Microsoft.Network/loadBalancers',variables('gwLBName'))]",
+         "rdsh-vm-loop"
          "[variables('updateVNetDNS1ID')]"
         ],
         "properties": {
@@ -943,7 +944,7 @@
             "existingAdminPassword": {
               "value": "[parameters('adminPassword')]"
             },
-             "_artifactsLocation": {
+            "_artifactsLocation": {
             "type": "string",
             "metadata": {
                 "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
