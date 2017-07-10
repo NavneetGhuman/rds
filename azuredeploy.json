@@ -909,7 +909,7 @@
          "properties":{
             "mode":"Incremental",
             "templateLink":{
-               "uri":"[concat(variables('_artifactsLocation'), 'nested/azuredeploy.json')]",
+               "uri":"[concat(parameters('_artifactsLocation'), 'nested/azuredeploy.json')]",
                "contentVersion":"1.0.0.0"
             },
             "parameters":{
