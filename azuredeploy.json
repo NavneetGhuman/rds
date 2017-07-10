@@ -950,5 +950,19 @@
             }
          }
       }
-   ]
+   ],
+   "outputs":{
+      "GWVMIP":{
+         "value":"[reference(resourceId('Microsoft.Network/publicIPAddresses',parameters('gwpublicIPAddressName'))).ipAddress]",
+         "type":"string"
+      },
+      "LBIP":{
+         "value":"[reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))).ipAddress]",
+         "type":"string"
+      },
+      "DomainName":{
+         "value":"[parameters('adDomainName')]",
+         "type":"string"
+      }
+   }
 }
