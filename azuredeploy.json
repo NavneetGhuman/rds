@@ -111,7 +111,19 @@
       "metadata": {
         "description": "Name of the RD Connection Broker VM resource in the deployment (the configure certificates script is executed on this VM)."
       }
-    }
+    },
+     "_artifactsLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
+            },
+        },
+        "_artifactsLocationSasToken": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
+            }
+        }
     },
     "variables": {
       "_artifactsLocation": "https://raw.githubusercontent.com/NavneetGhuman/rds/master/",
@@ -893,12 +905,14 @@
         "type": "Microsoft.Resources/deployments",
         "apiVersion": "2016-02-01",
         "dependsOn": [
-        "Microsoft.Compute/virtualMachines/gw-vm/extensions/gateway",
+        "Microsoft.Compute/virtualMachines/cb-vm/extensions/rdsdeployment",
+         "[concat('Microsoft.Network/loadBalancers/', variables('gwlbName'))]",
+         "[variables('updateVNetDNS1ID')]"
         ],
         "properties": {
           "mode": "Incremental",
           "templateLink": {
-            "uri": "[concat(variables('_artifactsLocation'), '/nested/azuredeploy.json')]",
+            "uri": "[concat(variables('_artifactsLocation'), 'nested/azuredeploy.json')]",
             "contentVersion": "1.0.0.0"
           },
           "parameters": {
@@ -928,6 +942,17 @@
             },
             "existingAdminPassword": {
               "value": "[parameters('adminPassword')]"
+            },
+             "_artifactsLocation": {
+            "type": "string",
+            "metadata": {
+                "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
+            },
+        },
+        "_artifactsLocationSasToken": {
+            "type": "securestring",
+            "metadata": {
+                "description": "The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
             }
           }
         }
