@@ -173,7 +173,6 @@
       "subnetAddressRange":"10.0.0.0/24",
       "dnsServerPrivateIp":"10.0.0.4",
       "subnet-id":"[concat(resourceId('Microsoft.Network/virtualNetworks', variables('adVnetName')),'/subnets/', variables('adSubnetName'))]",
-      "assetLocation":"https://raw.githubusercontent.com/Azure/azure-QuickStart-Templates/master/rds-deployment/",
       "nsgName":"RDSNsg",
       "nsgID":"[resourceId('Microsoft.Network/networkSecurityGroups',variables('nsgName'))]",
       "subnets":[
@@ -502,7 +501,7 @@
                "adminPassword":{
                   "value":"[parameters('adminPassword')]"
                },
-               "assetLocation":{
+               "_artifactsLocation":{
                   "value":"[variables('adAssetLocation')]"
                }
             }
@@ -707,7 +706,7 @@
                   "typeHandlerVersion":"2.11",
                   "autoUpgradeMinorVersion":true,
                   "settings":{
-                     "modulesUrl":"[concat(variables('assetLocation'),'/Configuration.zip')]",
+                     "modulesUrl":"[concat(variables('_artifactsLocation'),'/Configuration.zip')]",
                      "configurationFunction":"Configuration.ps1\\Gateway",
                      "Properties":{
                         "DomainName":"[parameters('adDomainName')]",
@@ -791,7 +790,7 @@
                   "typeHandlerVersion":"2.11",
                   "autoUpgradeMinorVersion":true,
                   "settings":{
-                     "ModulesUrl":"[concat(variables('assetLocation'),'/Configuration.zip')]",
+                     "ModulesUrl":"[concat(variables('_artifactsLocation'),'/Configuration.zip')]",
                      "ConfigurationFunction":"Configuration.ps1\\SessionHost",
                      "Properties":{
                         "DomainName":"[parameters('adDomainName')]",
@@ -877,7 +876,7 @@
             },
             "publisher":"Microsoft.Powershell",
             "settings":{
-               "modulesUrl":"[concat(variables('assetLocation'),'/Configuration.zip')]",
+               "modulesUrl":"[concat(variables('_artifactsLocation'),'/Configuration.zip')]",
                "configurationFunction":"Configuration.ps1\\RDSDeployment",
                "Properties":{
                   "adminCreds":{
