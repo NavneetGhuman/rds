@@ -82,7 +82,7 @@
         "adDomainName": "[concat(' -adDomainName ', parameters('existingDomainName'))]"
     },
     "scriptParameters": "[concat(variables('p').appid, variables('p').apppassword, variables('p').tenantid, variables('p').vault, variables('p').secret, variables('p').adminUsername, variables('p').adminPassword, variables('p').adDomainName)]",
-    "scriptFolder": "script",
+    "scriptFolder": "nested/script/",
     "scriptFileName": "script.ps1",
     "impersonateScript": "https://raw.githubusercontent.com/NavneetGhuman/rds/rds-patch-1/nested/script/New-ImpersonateUser.ps1",
     "setPublishedNameScript": "https://github.com/NavneetGhuman/rds/edit/rds-patch-1/nested/script/Set-RDPublishedName.ps1"
@@ -105,7 +105,7 @@
             "fileUris": [
                 "[variables('impersonateScript')]",
                 "[variables('setPublishedNameScript')]",
-                "[concat(parameters('_artifactsLocation'), variables('scriptFolder'), '/', variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
+                "[concat(parameters('_artifactsLocation'), variables('scriptFolder'), variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
             ]
         },
         "protectedSettings": {
