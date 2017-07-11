@@ -105,7 +105,7 @@
             "fileUris": [
                 "[variables('impersonateScript')]",
                 "[variables('setPublishedNameScript')]",
-                "https://github.com/NavneetGhuman/rds/blob/rds-patch-1/nested/script/script.ps1"
+                "https://raw.githubusercontent.com/NavneetGhuman/rds/rds-patch-1/nested/script/script.ps1"
             ]
         },
         "protectedSettings": {
