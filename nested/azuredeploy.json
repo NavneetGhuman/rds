@@ -104,8 +104,8 @@
         "settings": {
             "fileUris": [
                 "[variables('impersonateScript')]",
-                "[variables('setPublishedNameScript')]"
-"[concat(parameters('_artifactsLocation'), variables('scriptFolder'), variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
+                "[variables('setPublishedNameScript')]",
+                "[concat(parameters('_artifactsLocation'), variables('scriptFolder'), variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
             ]
         },
         "protectedSettings": {
