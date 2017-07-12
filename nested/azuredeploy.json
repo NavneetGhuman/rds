@@ -86,10 +86,8 @@
     "scriptFolder": "scripts",
     "scriptFileName": "script.ps1",
     "impersonateScript": "[concat(parameters('_artifactsLocation'),'scripts/New-ImpersonateUser.ps1')]",
-    "setPublishedNameScript": "[concat(parameters('_artifactsLocation'),'scripts/Set-RDPublishedName.ps1')]",
-    "scripturi": "[concat(parameters('_artifactsLocation'),'scripts/script.ps1')]"
+    "setPublishedNameScript": "[concat(parameters('_artifactsLocation'),'scripts/Set-RDPublishedName.ps1')]"
   },
-
   "resources": [
     {
       "apiVersion": "2015-06-15",
@@ -108,7 +106,7 @@
             "fileUris": [
                 "[variables('impersonateScript')]",
                 "[variables('setPublishedNameScript')]",
-                "[variables('scripturi')]",
+                "https://raw.githubusercontent.com/NavneetGhuman/rds/rds-patch-3/scripts/script.ps1"
             ]
         },
         "protectedSettings": {
