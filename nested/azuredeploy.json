@@ -84,8 +84,8 @@
     "scriptParameters": "[concat(variables('p').appid, variables('p').apppassword, variables('p').tenantid, variables('p').vault, variables('p').secret, variables('p').adminUsername, variables('p').adminPassword, variables('p').adDomainName)]",
     "scriptFolder": "nested/script/",
     "scriptFileName": "script.ps1",
-    "impersonateScript": "https://raw.githubusercontent.com/NavneetGhuman/rds/master/nested/script/New-ImpersonateUser.ps1",
-    "setPublishedNameScript": "https://raw.githubusercontent.com/NavneetGhuman/rds/master/nested/script/Set-RDPublishedName.ps1"
+    "impersonateScript": "https://raw.githubusercontent.com/NavneetGhuman/rds/master/script/New-ImpersonateUser.ps1",
+    "setPublishedNameScript": "https://raw.githubusercontent.com/NavneetGhuman/rds/master/script/Set-RDPublishedName.ps1"
   },
 
   "resources": [
@@ -106,7 +106,7 @@
             "fileUris": [
                 "[variables('impersonateScript')]",
                 "[variables('setPublishedNameScript')]",
-                "[concat(parameters('_artifactsLocation'), variables('scriptFolder'), '/', variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
+                "https://raw.githubusercontent.com/NavneetGhuman/rds/master/script/script.ps1"
             ]
         },
         "protectedSettings": {
