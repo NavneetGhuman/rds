@@ -87,7 +87,7 @@
     "scriptFileName": "script.ps1",
     "impersonateScript": "[concat(parameters('_artifactsLocation'),'scripts/New-ImpersonateUser.ps1')]",
     "setPublishedNameScript": "[concat(parameters('_artifactsLocation'),'scripts/Set-RDPublishedName.ps1')]",
-    "scripturi": "[concat(parameters('_artifactsLocation'), variables('scriptFolder'), '/', variables('scriptFileName'), parameters('_artifactsLocationSasToken'))]"
+    "scripturi": "[concat(parameters('_artifactsLocation'),'scripts/script.ps1')]"
   },
 
   "resources": [
