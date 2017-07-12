@@ -706,7 +706,7 @@
                   "typeHandlerVersion":"2.11",
                   "autoUpgradeMinorVersion":true,
                   "settings":{
-                     "modulesUrl":"[concat(variables('_artifactsLocation'),'/Configuration.zip')]",
+                     "modulesUrl":"[concat(parameters('_artifactsLocation'),'/Configuration.zip')]",
                      "configurationFunction":"Configuration.ps1\\Gateway",
                      "Properties":{
                         "DomainName":"[parameters('adDomainName')]",
@@ -790,7 +790,7 @@
                   "typeHandlerVersion":"2.11",
                   "autoUpgradeMinorVersion":true,
                   "settings":{
-                     "ModulesUrl":"[concat(variables('_artifactsLocation'),'/Configuration.zip')]",
+                     "ModulesUrl":"[concat(parameters('_artifactsLocation'),'/Configuration.zip')]",
                      "ConfigurationFunction":"Configuration.ps1\\SessionHost",
                      "Properties":{
                         "DomainName":"[parameters('adDomainName')]",
@@ -876,7 +876,7 @@
             },
             "publisher":"Microsoft.Powershell",
             "settings":{
-               "modulesUrl":"[concat(variables('_artifactsLocation'),'/Configuration.zip')]",
+               "modulesUrl":"[concat(parameters('_artifactsLocation'),'/Configuration.zip')]",
                "configurationFunction":"Configuration.ps1\\RDSDeployment",
                "Properties":{
                   "adminCreds":{
