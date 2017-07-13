@@ -322,6 +322,18 @@
                      "backendPort":3389,
                      "enableFloatingIP":false
                   }
+               },
+               {  
+                  "name":"rdp",
+                  "properties":{  
+                     "frontendIPConfiguration":{  
+                        "id":"[variables('gwlbFEConfigID')]"
+                     },
+                     "protocol":"tcp",
+                     "frontendPort":636,
+                     "backendPort":636,
+                     "enableFloatingIP":false
+                  }
                }
             ]
          }
