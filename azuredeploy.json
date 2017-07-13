@@ -324,10 +324,10 @@
                   }
                },
                {  
-                  "name":"rdp",
+                  "name":"ldaps",
                   "properties":{  
                      "frontendIPConfiguration":{  
-                        "id":"[variables('gwlbFEConfigID')]"
+                        "id":"[variables('publiclbFEConfigID')]"
                      },
                      "protocol":"tcp",
                      "frontendPort":636,
