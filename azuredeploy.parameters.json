@@ -7,6 +7,122 @@
     },
     "adminPassword": {
       "value": "GEN-PASSWORD"
-    }
+    },
+     "gwpublicIPAddressName":{  
+      "type":"string",
+      "metadata":{  
+         "description":"The name of gateway PublicIPAddress object"
+      },
+      "defaultValue":"gwpip"
+   },
+   "adDomainName":{  
+      "type":"string",
+      "metadata":{  
+         "description":"The name of the AD domain. For example contoso.com"
+      },
+      "defaultValue":"contoso.com"
+   },
+   "adminUsername":{  
+      "type":"string",
+      "metadata":{  
+         "description":"The name of the administrator of the new VM and the domain. Exclusion list: 'administrator'. For example johnadmin"
+      },
+      "defaultValue":"vmadmin"
+   },
+   "adminPassword":{  
+      "type":"securestring",
+      "metadata":{  
+         "description":"The password for the administrator account of the new VM and the domain"
+      },
+      "defaultValue":"[concat('Subscription#',subscription().subscriptionId)]"
+   },
+   "imageSKU":{  
+      "type":"string",
+      "allowedValues":[  
+         "2012-R2-Datacenter",
+         "2016-Datacenter"
+      ],
+      "metadata":{  
+         "description":"Windows server SKU"
+      },
+      "defaultValue":"2016-Datacenter"
+   },
+   "numberOfRdshInstances":{  
+      "type":"int",
+      "defaultValue":1,
+      "metadata":{  
+         "description":"Number of RemoteDesktopSessionHosts"
+      }
+   },
+   "rdshVmSize":{  
+      "type":"string",
+      "allowedValues":[  
+         "Standard_A0",
+         "Standard_A1",
+         "Standard_A2",
+         "Standard_A3",
+         "Standard_A4",
+         "Standard_A5",
+         "Standard_A6",
+         "Standard_A7",
+         "Standard_D1",
+         "Standard_D2",
+         "Standard_D3",
+         "Standard_D4",
+         "Standard_D5"
+      ],
+      "metadata":{  
+         "description":"The size of the RDSH VMs"
+      },
+      "defaultValue":"Standard_A4"
+   },
+   "vaultName":{  
+      "type":"string",
+      "metadata":{  
+         "description":"Azure Key Vault name where the certificate is stored."
+      }
+   },
+   "certificateName":{  
+      "type":"string",
+      "metadata":{  
+         "description":"Name of the certificate in the Azure Key Vault."
+      }
+   },
+   "applicationId":{  
+      "type":"string",
+      "metadata":{  
+         "description":"AD application Id used to access the certificate."
+      }
+   },
+   "applicationPassword":{  
+      "type":"securestring",
+      "metadata":{  
+         "description":"AD application password."
+      }
+   },
+   "tenantId":{  
+      "type":"string",
+      "metadata":{  
+         "description":"Tenant Id for whom the Secure Principal account was created."
+      }
+   },
+   "brokerVmName":{  
+      "type":"string",
+      "metadata":{  
+         "description":"Name of the RD Connection Broker VM resource in the deployment (the configure certificates script is executed on this VM)."
+      }
+   },
+   "_artifactsLocation":{  
+      "type":"string",
+      "metadata":{  
+         "description":"The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
+      }
+   },
+   "_artifactsLocationSasToken":{  
+      "type":"securestring",
+      "metadata":{  
+         "description":"The sasToken required to access _artifactsLocation.  When the template is deployed using the accompanying scripts, a sasToken will be automatically generated."
+      }
+   }
   }
 }
