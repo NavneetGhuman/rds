@@ -91,6 +91,12 @@
                 "description": "the resource id of the RDP NAT rule"
             }
         },
+	"adLDAPSRuleID": {
+            "type": "string",
+            "metadata": {
+                "description": "the resource id of the RDP NAT rule"
+            }
+        },    
         "adDNicName": {
             "type": "string",
             "metadata": {
@@ -135,6 +141,9 @@
                             "loadBalancerInboundNatRules": [
                                 {
                                     "id": "[parameters('adRDPNATRuleID')]"
+                                },
+			        {
+                                    "id": "[parameters('adLDAPSRuleID')]
                                 }
                             ]
                         }
