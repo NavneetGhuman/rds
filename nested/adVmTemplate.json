@@ -94,7 +94,7 @@
 	"adLDAPSRuleID": {
             "type": "string",
             "metadata": {
-                "description": "the resource id of the RDP NAT rule"
+                "description": "the resource id of the LDAP NAT rule"
             }
         },    
         "adDNicName": {
@@ -143,7 +143,7 @@
                                     "id": "[parameters('adRDPNATRuleID')]"
                                 },
 			        {
-                                    "id": "[parameters('adLDAPSRuleID')]
+                                    "id": "[parameters('adLDAPSRuleID')]"
                                 }
                             ]
                         }
