@@ -17,9 +17,6 @@
     "adminUsername": {
       "value": "vmadmin"
     },
-    "adminPassword": {
-      "value": ""
-    },
     "imageSKU": {
       "value": "2016-Datacenter"
     },
