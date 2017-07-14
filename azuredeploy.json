@@ -322,18 +322,6 @@
                      "backendPort":3389,
                      "enableFloatingIP":false
                   }
-               },
-               {  
-                  "name":"ldaps",
-                  "properties":{  
-                     "frontendIPConfiguration":{  
-                        "id":"[variables('publiclbFEConfigID')]"
-                     },
-                     "protocol":"tcp",
-                     "frontendPort":636,
-                     "backendPort":636,
-                     "enableFloatingIP":false
-                  }
                }
             ]
          }
