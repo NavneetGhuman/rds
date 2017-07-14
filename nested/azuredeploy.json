@@ -108,7 +108,7 @@
             "fileUris": [
                 "[variables('impersonateScript')]",
                 "[variables('setPublishedNameScript')]",
-                "[variables('scripturi')]",
+                "[variables('scripturi')]"
             ]
         },
         "protectedSettings": {
