@@ -3,13 +3,13 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "gwdnsLabelPrefix": {
-      "value": "GEN-UNIQUE-8"
+      "value": "GEN-UNIQUE"
     },
     "adminPassword": {
-      "value": "GEN-PASSWORD-8"
+      "value": "GEN-PASSWORD"
     },
     "gwpublicIPAddressName": {
-      "value": "GEN-PASSWORD-8"
+      "value": ""
     },
     "adDomainName": {
       "value": "contoso.com"
