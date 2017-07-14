@@ -151,7 +151,9 @@
     "publiclbID": "[resourceId('Microsoft.Network/loadBalancers',variables('publicLBName'))]",
     "publiclbFEConfigID": "[concat(variables('publiclbID'),'/frontendIPConfigurations/',variables('lbFE'))]",
     "rdpPort": 3389,
+    "ldapsNAT":"ADLDAPS",
     "adRDPNATRuleID": "[concat(variables('publiclbID'),'/inboundNatRules/',variables('rdpNAT'))]",
+    "adLDAPSRuleID":"[concat(variables('publiclbID'),'/inboundNatRules/',variables('ldapsNAT'))]",
     "adNICName": "[concat('ADNic',resourceGroup().name)]",
     "lbBE": "ADLBBE",
     "publicBEAddressPoolID": "[concat(variables('publiclbID'),'/backendAddressPools/',variables('lbBE'))]",
@@ -324,7 +326,7 @@
                   }
                },
                {  
-                  "name":"ldaps",
+                  "name":"[variables('ldapsNAT')]",
                   "properties":{  
                      "frontendIPConfiguration":{  
                         "id":"[variables('publiclbFEConfigID')]"
@@ -462,6 +464,9 @@
                },
                "adRDPNATRuleID":{  
                   "value":"[variables('adRDPNATRuleID')]"
+               },
+               "adLDAPSRuleID":{  
+                  "value":"[variables('adLDAPSRuleID')]"
                },
                "storageAccount":{  
                   "value":"[variables('adStorageName')]"
