@@ -70,7 +70,6 @@
             }
         }
     },
-
   "variables": {
     "p": {
         "appid": "[concat(' -appId ', parameters('applicationId'))]",
@@ -89,7 +88,6 @@
     "setPublishedNameScript": "[concat(parameters('_artifactsLocation'),'scripts/Set-RDPublishedName.ps1')]",
     "scripturi": "[concat(parameters('_artifactsLocation'),'scripts/script.ps1')]"
   },
-
   "resources": [
     {
       "apiVersion": "2015-06-15",
@@ -117,7 +115,6 @@
       }
     }
   ],
-
   "outputs": {
   }
 }
